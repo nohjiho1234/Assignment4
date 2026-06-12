@@ -504,7 +504,8 @@ select:focus {
 
 .quick-list,
 .growth-list,
-.food-suggestions {
+.food-suggestions,
+.exercise-volume-list {
   display: grid;
   gap: 12px;
 }
@@ -547,6 +548,35 @@ select:focus {
 .food-suggestion span {
   color: var(--muted);
   font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.exercise-volume-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.exercise-volume-card {
+  display: grid;
+  gap: 7px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfffd;
+}
+
+.exercise-volume-card span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.exercise-volume-card strong {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.exercise-volume-card small {
+  color: var(--muted);
   font-weight: 700;
 }
 
@@ -812,7 +842,8 @@ td input {
   }
 
   .calendar-layout,
-  .record-detail-grid {
+  .record-detail-grid,
+  .exercise-volume-list {
     grid-template-columns: 1fr;
   }
 }
@@ -833,7 +864,8 @@ td input {
   .summary-grid.three,
   .summary-grid.two,
   .form-grid,
-  .stats-strip {
+  .stats-strip,
+  .exercise-volume-list {
     grid-template-columns: 1fr;
   }
 

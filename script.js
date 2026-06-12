@@ -292,6 +292,20 @@ function totalWorkoutVolume(workouts = todayWorkouts()) {
   return workouts.reduce((sum, workout) => sum + workoutVolume(workout), 0);
 }
 
+function calculateExerciseVolumes(workouts = todayWorkouts()) {
+  return workouts.reduce((summary, workout) => {
+    const name = workout.name.trim();
+    const key = name.toLowerCase();
+    const volume = workoutVolume(workout);
+    if (!summary[key]) {
+      summary[key] = { name, volume: 0, records: 0 };
+    }
+    summary[key].volume += volume;
+    summary[key].records += 1;
+    return summary;
+  }, {});
+}
+
 function previousVolumeFor(exerciseName, currentId) {
   const normalized = exerciseName.trim().toLowerCase();
   const workouts = getWorkouts();
@@ -619,21 +633,34 @@ function initBodyPage() {
 
 function initWorkoutPage() {
   const table = document.getElementById("workoutTable");
+  const exerciseVolumeList = document.getElementById("exerciseVolumeList");
   if (!table) return;
 
   const render = () => {
     const workouts = getWorkouts();
     const total = totalWorkoutVolume(workouts);
     const changes = workouts.map((workout) => workoutVolume(workout) - previousVolumeFor(workout.name, workout.id));
+    const exerciseVolumes = Object.values(calculateExerciseVolumes(workouts)).sort((a, b) => b.volume - a.volume);
     setText("workoutTotal", round(total));
-    setText("exerciseCount", workouts.length);
+    setText("exerciseCount", exerciseVolumes.length);
     setText("bestChange", changes.length ? round(Math.max(...changes)) : 0);
 
     if (!workouts.length) {
       table.innerHTML = `<tr><td colspan="7" class="empty-cell">아직 기록된 운동이 없습니다.</td></tr>`;
+      exerciseVolumeList.innerHTML = `<div class="empty-state">운동을 추가하면 운동별 볼륨이 표시됩니다.</div>`;
       setText("workoutFeedback", "운동을 추가하면 이전 기록과 비교됩니다.");
       return;
     }
+
+    exerciseVolumeList.innerHTML = exerciseVolumes
+      .map((exercise) => `
+        <div class="exercise-volume-card">
+          <span>${escapeHtml(exercise.name)}</span>
+          <strong>${round(exercise.volume)} kg</strong>
+          <small>${exercise.records}개 기록 합산</small>
+        </div>
+      `)
+      .join("");
 
     const latest = workouts[workouts.length - 1];
     const latestChange = workoutVolume(latest) - previousVolumeFor(latest.name, latest.id);
@@ -652,7 +679,7 @@ function initWorkoutPage() {
         const change = volume - previousVolumeFor(workout.name, workout.id);
         return `
           <tr>
-            <td>${workout.name}</td>
+            <td>${escapeHtml(workout.name)}</td>
             <td>${workout.weight} kg</td>
             <td>${workout.reps}</td>
             <td>${workout.sets}</td>
