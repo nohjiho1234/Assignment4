@@ -294,7 +294,7 @@ function totalWorkoutVolume(workouts = todayWorkouts()) {
 
 function calculateExerciseVolumes(workouts = todayWorkouts()) {
   return workouts.reduce((summary, workout) => {
-    const name = workout.name.trim();
+    const name = String(workout.name || "이름 없는 운동").trim();
     const key = name.toLowerCase();
     const volume = workoutVolume(workout);
     if (!summary[key]) {
