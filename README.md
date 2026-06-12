@@ -1,104 +1,123 @@
 # CampusFit
 
-CampusFit은 웨이트 트레이닝을 하는 대학생을 위한 프론트엔드 웹 서비스입니다. 사용자는 식사를 기록하고, 학교 식당 메뉴를 빠르게 추가하고, 칼로리와 주요 영양소를 계산하며, 신체 정보를 기반으로 하루 목표 칼로리와 운동 볼륨을 확인할 수 있습니다.
+CampusFit is a frontend web service for university students who do weight training. Users can log meals, quick-add campus cafeteria menus, calculate calories and macronutrients, set a daily calorie target from body data, and track workout volume.
 
-## 주요 기능
+## Main Features
 
-- 칼로리, 단백질, 탄수화물, 지방을 계산하는 식단 기록
-- 음식명 입력 시 내장 영양소 데이터로 칼로리와 주요 영양소 자동 입력
-- 섭취량 조절에 따른 영양 정보 자동 재계산
-- 학교 식당 메뉴 빠른 추가 버튼
-- 목표 유형에 따른 신체 프로필 및 목표 칼로리 계산
-- 무게 x 반복 횟수 x 세트 수 방식의 운동 볼륨 계산
-- 같은 운동의 이전 기록과 현재 기록 비교
-- 칼로리 균형, 단백질 진행률, 운동 성장 기록을 보여주는 대시보드
-- 로그인한 사용자별로 분리되는 식단, 신체 프로필, 운동 기록
-- 한국 시간 기준 날짜별 기록 저장 및 캘린더 조회
-- 브라우저 `localStorage`를 활용한 로컬 계정 및 기록 저장
+- Diet logging with calorie, protein, carbohydrate, and fat totals
+- Automatic nutrient autofill from an expanded built-in food database
+- Serving-size adjustment with automatic nutrient recalculation
+- Campus cafeteria quick-add menu buttons
+- Body profile input and goal-based calorie target calculation
+- Workout volume calculation using `weight x repetitions x sets`
+- Per-exercise workout volume summaries
+- Previous-record comparison for the same exercise
+- Dashboard with calorie balance, protein progress, and workout growth
+- User-separated meal, body profile, and workout records after local login
+- Date-based records using Korea Standard Time
+- Calendar page for reviewing saved records by date
+- Browser `localStorage` persistence
 
-## 프로젝트 구조
+## Project Structure
 
-- `index.html`: 홈 화면과 서비스 소개
-- `login.html`: 로컬 계정 가입 및 로그인
-- `diet.html`: 식단 기록 및 학교 식당 메뉴 빠른 추가
-- `body.html`: 신체 프로필과 목표 칼로리 계산
-- `workout.html`: 운동 기록과 볼륨 비교
-- `dashboard.html`: 통합 일일 요약
-- `calendar.html`: 날짜별 저장 기록 조회
-- `style.css`: 반응형 레이아웃과 시각 디자인
-- `script.js`: 앱 상태, 계산 로직, 상호작용
+- `index.html`: Home page and service overview
+- `login.html`: Local account signup and login
+- `diet.html`: Diet logging and campus cafeteria quick add
+- `body.html`: Body profile and calorie target calculation
+- `workout.html`: Workout logging and volume comparison
+- `dashboard.html`: Combined daily summary
+- `calendar.html`: Date-based record review
+- `style.css`: Responsive layout and visual design
+- `script.js`: App state, calculations, storage, and interactions
+- `package.json`: Project metadata for deployment
 
-## 음식 영양소 자동 입력
+## Food Nutrition Autofill
 
-식단 기록 페이지의 음식명 입력란에 `닭가슴살`, `현미밥`, `김치찌개`, `그릭 요거트` 같은 음식명을 입력하면 내장 음식 영양소 데이터에서 가장 가까운 항목을 찾아 칼로리, 단백질, 탄수화물, 지방을 자동으로 채웁니다. 후보가 여러 개 있으면 추천 버튼을 눌러 선택할 수 있습니다.
+On the Diet Log page, users can type food names such as `chicken breast`, `brown rice`, `kimchi stew`, or `Greek yogurt`. CampusFit searches its built-in food nutrition database and automatically fills calories, protein, carbohydrates, and fat.
 
-외부 AI/API를 사용하지 않는 대신 한식, 학식, 운동 식단, 간식, 음료 중심의 내장 데이터를 확장했습니다. 매칭되는 음식이 없을 때는 직접 입력 모드 안내를 보여주고 사용자가 영양소를 직접 입력할 수 있게 했습니다.
+Instead of using an external AI or API, the MVP uses an expanded internal dataset focused on Korean meals, campus meals, workout-friendly foods, snacks, and drinks. If no matching food is found, the app shows a manual-entry guide so users can still enter nutrition values themselves.
 
-영양 정보는 과제용 MVP의 추정 데이터이며, 실제 제품 또는 식당 메뉴에 따라 차이가 있을 수 있습니다.
+Nutrition values are estimates for project demonstration purposes and may differ from real products or cafeteria servings.
 
-## 로그인 및 저장 방식
+## Login And Storage
 
-이 프로젝트는 과제용 MVP이므로 백엔드 서버나 데이터베이스를 사용하지 않습니다. 대신 브라우저 `localStorage`에 계정 정보와 기록을 저장하고, 현재 로그인한 사용자 이름을 기준으로 식단, 신체 프로필, 운동 기록의 저장 키를 분리합니다.
+CampusFit is an MVP without a backend server or database. It stores account data and records in browser `localStorage`.
 
-주의: 이 로그인 기능은 실제 서비스 수준의 보안 인증이 아닙니다. 제출용 웹 서비스에서 개인별 기록 흐름을 보여주기 위한 프론트엔드 시뮬레이션입니다.
+After login, meal records, body profile records, and workout records are separated by the current username. This allows multiple users on the same browser to keep separate records.
 
-## 날짜별 기록 방식
+Important limitation: this login feature is a frontend simulation for an assignment project. It is not production-grade authentication, and passwords are not securely handled like they would be in a real backend service.
 
-CampusFit은 한국 시간대(`Asia/Seoul`) 기준 `YYYY-MM-DD` 날짜 키를 사용합니다. 한국 기준 자정이 지나면 같은 사용자라도 새로운 날짜 키로 식단, 운동, 신체 프로필이 저장되므로 매일 기록을 새로 시작할 수 있습니다.
+## Date-Based Records
 
-캘린더 페이지에서는 기록이 있는 날짜에 표시가 나타나며, 날짜를 클릭하면 해당 날짜의 신체 프로필, 식단 기록, 운동 기록, 대시보드 요약을 한 화면에서 확인할 수 있습니다.
+CampusFit uses the `Asia/Seoul` time zone and stores daily records with a `YYYY-MM-DD` date key. After midnight in Korea Standard Time, the same user automatically starts recording under a new date.
 
-## 로컬 실행
+The Calendar page marks dates that have saved records. When a user clicks a date, the page shows that date's body profile, diet log, workout log, and dashboard summary in one organized view.
 
-브라우저에서 `index.html`을 직접 열거나, 아래 명령어로 로컬 정적 서버를 실행합니다.
+## Run Locally
+
+Open `index.html` directly in a browser, or run a local static server:
 
 ```bash
 python3 -m http.server 5173
 ```
 
-그 다음 아래 주소로 접속합니다.
+Then open:
 
 ```text
 http://localhost:5173
 ```
 
-## 배포
+## Deployment
 
-이 프로젝트는 Vercel에서 정적 사이트로 배포할 수 있습니다. 배포 후 최종 Vercel URL을 아래에 입력합니다.
+This project can be deployed to Vercel as a static site. The intended deployment URL is:
 
 ```text
 Vercel URL: https://campusfit.vercel.app
 ```
 
-## AI 개발 리포트
+If that exact Vercel subdomain is already taken, Vercel may assign a different project URL that still includes the project name.
 
-사용한 AI 도구: Codex.
+## AI Development Report
 
-요청한 작업:
+AI tool used: Codex.
 
-- 과제 PDF와 CampusFit PRD 읽기
-- PRD를 기반으로 웹사이트 구현
-- HTML, CSS, JavaScript 기반의 명확한 정적 프로젝트 구조 생성
-- 프로젝트 설명과 로컬 실행 방법을 포함한 README 작성
+Tasks requested:
 
-대표 프롬프트:
+- Read the assignment PDF and CampusFit PRD
+- Implement the website based on the PRD
+- Create a static multi-page project using HTML, CSS, and JavaScript
+- Convert the interface text to Korean
+- Add local login and user-separated records
+- Store records by Korea Standard Time date
+- Add a calendar page for reviewing records
+- Add food nutrition autofill with an expanded built-in dataset
+- Add per-exercise workout volume summaries
+- Prepare this README
+
+Representative prompts:
 
 - "assignment4에 대한 PRD는 작성했어. 이걸기반으로 구현해줘"
-- "CampusFit PRD를 바탕으로 웹 서비스를 구현해줘."
-- "식단 기록, 학교 식당 빠른 추가, 신체 프로필, 운동 기록, 대시보드를 포함해줘."
+- "사이트가 다 영어로 되어있어. 한국어로 구성해줘"
+- "저 저장한 기록들이 한국기준24시기준으로 다시 기록할 수 있게해줘. 그리고 캘린더 페이지 만들어."
+- "음식추가란에 어떤 음식이름만 넣으면 자동으로 칼로리랑 영양소 계산해주게 해줘."
+- "운동 기록에 운동볼륨이 합쳐서 나오는데 각 운동마다 운동볼륨을 나오게 해줘."
 
-수정하거나 개선한 부분:
+Modified or improved parts:
 
-- Vercel 배포가 쉽도록 정적 멀티 페이지 구조를 사용했습니다.
-- 새로고침 후에도 사용자별 식단, 프로필, 운동 기록이 유지되도록 localStorage를 사용했습니다.
-- 식단, 신체 목표, 운동 데이터를 대시보드에서 하나의 요약으로 연결했습니다.
-- 로그인 페이지를 추가해 사용자별 기록이 섞이지 않도록 저장 구조를 개선했습니다.
-- 한국 시간 기준 날짜별 저장 구조와 캘린더 조회 화면을 추가했습니다.
-- 음식명 기반 영양소 자동 입력과 추천 후보 UI를 추가했습니다.
-- 내장 음식 데이터베이스를 확장하고 매칭 실패 시 직접 입력 안내를 추가했습니다.
+- Used a static multi-page structure for simple Vercel deployment
+- Added local account separation with `localStorage`
+- Added date-based storage using Korea Standard Time
+- Connected diet, body profile, workout, and dashboard data
+- Added a calendar view for historical records
+- Added campus cafeteria quick-add data based on the provided menu
+- Expanded the built-in food nutrition database
+- Added manual-entry fallback when food matching fails
+- Added per-exercise workout volume cards
+- Added cache-busting script URLs to reduce stale JavaScript issues after deployment
 
-버그 또는 한계:
+Limitations:
 
-- 영양 정보는 추정치이며 준비된 샘플 데이터를 사용합니다.
-- 기록과 계정은 현재 브라우저에만 저장됩니다.
-- MVP 범위에서는 실제 서버 인증, 암호화된 비밀번호 저장, 실제 학교 식당 API를 포함하지 않습니다.
+- Nutrition values are estimates and use prepared sample data
+- Accounts and records are stored only in the current browser
+- The login system is not production-grade authentication
+- The MVP does not include a backend server, encrypted password storage, real cafeteria API, or external AI nutrition lookup
