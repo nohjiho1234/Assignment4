@@ -72,7 +72,7 @@ http://localhost:5173
 This project can be deployed to Vercel as a static site. The intended deployment URL is:
 
 ```text
-Vercel URL: https://campusfit.vercel.app
+Vercel URL: https://assignment4-topaz-theta.vercel.app/
 ```
 
 If that exact Vercel subdomain is already taken, Vercel may assign a different project URL that still includes the project name.
