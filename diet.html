@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>식단 기록 | CampusFit</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span class="brand-mark">CF</span><span>CampusFit</span></a>
+      <nav class="top-nav" aria-label="주요 내비게이션">
+        <a href="index.html">홈</a>
+        <a class="active" href="diet.html">식단 기록</a>
+        <a href="body.html">신체 프로필</a>
+        <a href="workout.html">운동 기록</a>
+        <a href="dashboard.html">대시보드</a>
+        <a href="calendar.html">캘린더</a>
+        <a href="login.html">로그인</a>
+      </nav>
+      <div id="accountStatus" class="account-status"></div>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-title">
+        <p class="eyebrow">식단 기록</p>
+        <h1>식사를 기록하면 영양 정보가 바로 업데이트됩니다.</h1>
+        <p id="dailyDateLabel" class="date-note"></p>
+      </section>
+
+      <section class="summary-grid">
+        <div class="metric-card"><span>칼로리</span><strong id="dietCalories">0</strong><small>kcal</small></div>
+        <div class="metric-card"><span>단백질</span><strong id="dietProtein">0</strong><small>g</small></div>
+        <div class="metric-card"><span>탄수화물</span><strong id="dietCarbs">0</strong><small>g</small></div>
+        <div class="metric-card"><span>지방</span><strong id="dietFat">0</strong><small>g</small></div>
+      </section>
+
+      <section class="two-column">
+        <article class="panel">
+          <h2>음식 추가</h2>
+          <form id="foodForm" class="form-grid">
+            <label>
+              음식명
+              <input id="foodName" type="text" placeholder="닭가슴살, 현미밥, 김치찌개" list="foodNameOptions" autocomplete="off" required />
+              <datalist id="foodNameOptions"></datalist>
+            </label>
+            <label>
+              섭취량
+              <input id="foodServing" type="number" min="0.1" step="0.1" value="1" required />
+            </label>
+            <label>
+              칼로리
+              <input id="foodCalories" type="number" min="0" step="1" placeholder="180" required />
+            </label>
+            <label>
+              단백질 (g)
+              <input id="foodProtein" type="number" min="0" step="0.1" placeholder="18" required />
+            </label>
+            <label>
+              탄수화물 (g)
+              <input id="foodCarbs" type="number" min="0" step="0.1" placeholder="12" required />
+            </label>
+            <label>
+              지방 (g)
+              <input id="foodFat" type="number" min="0" step="0.1" placeholder="4" required />
+            </label>
+            <button class="button primary full-row" type="submit">음식 추가</button>
+          </form>
+          <p id="foodAutoFillMessage" class="form-message"></p>
+          <div id="foodSuggestions" class="food-suggestions"></div>
+        </article>
+
+        <article class="panel">
+          <h2>학교 식당 빠른 추가</h2>
+          <div id="cafeteriaList" class="quick-list"></div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-title-row">
+          <h2>오늘의 식단 기록</h2>
+          <button id="clearMeals" class="button danger" type="button">식단 비우기</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>음식</th>
+                <th>섭취량</th>
+                <th>칼로리</th>
+                <th>단백질</th>
+                <th>탄수화물</th>
+                <th>지방</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="mealTable"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

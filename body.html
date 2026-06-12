@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>신체 프로필 | CampusFit</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span class="brand-mark">CF</span><span>CampusFit</span></a>
+      <nav class="top-nav" aria-label="주요 내비게이션">
+        <a href="index.html">홈</a>
+        <a href="diet.html">식단 기록</a>
+        <a class="active" href="body.html">신체 프로필</a>
+        <a href="workout.html">운동 기록</a>
+        <a href="dashboard.html">대시보드</a>
+        <a href="calendar.html">캘린더</a>
+        <a href="login.html">로그인</a>
+      </nav>
+      <div id="accountStatus" class="account-status"></div>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-title">
+        <p class="eyebrow">신체 프로필</p>
+        <h1>신체 정보를 바탕으로 하루 목표 칼로리를 설정합니다.</h1>
+        <p id="dailyDateLabel" class="date-note"></p>
+      </section>
+
+      <section class="two-column">
+        <article class="panel">
+          <h2>프로필 입력</h2>
+          <form id="bodyForm" class="form-grid">
+            <label>
+              체중 (kg)
+              <input id="bodyWeight" type="number" min="30" step="0.1" required />
+            </label>
+            <label>
+              골격근량 (kg)
+              <input id="muscleMass" type="number" min="10" step="0.1" required />
+            </label>
+            <label>
+              체지방률 (%)
+              <input id="bodyFat" type="number" min="3" max="60" step="0.1" required />
+            </label>
+            <label>
+              기초대사량 (kcal)
+              <input id="bmr" type="number" min="900" step="1" required />
+            </label>
+            <label class="full-row">
+              목표
+              <select id="goalType">
+                <option value="cut">감량</option>
+                <option value="maintain">유지</option>
+                <option value="leanBulk">린 벌크</option>
+              </select>
+            </label>
+            <button class="button primary full-row" type="submit">프로필 저장</button>
+          </form>
+        </article>
+
+        <article class="panel result-panel">
+          <h2>목표 칼로리</h2>
+          <div class="target-number"><strong id="targetCalories">0</strong><span>kcal / 일</span></div>
+          <p id="targetExplanation" class="feedback">신체 정보를 입력하면 목표 칼로리가 계산됩니다.</p>
+          <div class="formula-box">
+            목표 = 기초대사량 + 활동 보정값 + 목표 보정값
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

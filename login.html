@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인 | CampusFit</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="CampusFit 홈">
+        <span class="brand-mark">CF</span>
+        <span>CampusFit</span>
+      </a>
+      <nav class="top-nav" aria-label="주요 내비게이션">
+        <a href="index.html">홈</a>
+        <a href="diet.html">식단 기록</a>
+        <a href="body.html">신체 프로필</a>
+        <a href="workout.html">운동 기록</a>
+        <a href="dashboard.html">대시보드</a>
+        <a href="calendar.html">캘린더</a>
+        <a class="active" href="login.html">로그인</a>
+      </nav>
+      <div id="accountStatus" class="account-status"></div>
+    </header>
+
+    <main class="page-shell auth-shell">
+      <section class="page-title">
+        <p class="eyebrow">개인 기록 저장</p>
+        <h1>로그인하면 내 식단, 신체 프로필, 운동 기록이 따로 저장됩니다.</h1>
+      </section>
+
+      <section class="two-column">
+        <article class="panel">
+          <h2>로그인</h2>
+          <form id="loginForm" class="form-grid">
+            <label class="full-row">
+              사용자 이름
+              <input id="loginName" type="text" autocomplete="username" placeholder="nohjiho" required />
+            </label>
+            <label class="full-row">
+              비밀번호
+              <input id="loginPassword" type="password" autocomplete="current-password" required />
+            </label>
+            <button class="button primary full-row" type="submit">로그인</button>
+          </form>
+          <p id="loginMessage" class="form-message"></p>
+        </article>
+
+        <article class="panel">
+          <h2>새 계정 만들기</h2>
+          <form id="signupForm" class="form-grid">
+            <label class="full-row">
+              사용자 이름
+              <input id="signupName" type="text" autocomplete="username" placeholder="campusfit01" required />
+            </label>
+            <label class="full-row">
+              비밀번호
+              <input id="signupPassword" type="password" autocomplete="new-password" minlength="4" required />
+            </label>
+            <button class="button secondary full-row" type="submit">가입하고 시작하기</button>
+          </form>
+          <p id="signupMessage" class="form-message"></p>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2>저장 방식</h2>
+        <p>
+          이 버전은 과제용 MVP이므로 서버 데이터베이스 대신 브라우저 localStorage를 사용합니다.
+          실제 서비스처럼 안전한 인증은 아니지만, 한 브라우저 안에서 사용자별 기록을 분리해 저장할 수 있습니다.
+        </p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

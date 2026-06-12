@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>캘린더 | CampusFit</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="CampusFit 홈">
+        <span class="brand-mark">CF</span>
+        <span>CampusFit</span>
+      </a>
+      <nav class="top-nav" aria-label="주요 내비게이션">
+        <a href="index.html">홈</a>
+        <a href="diet.html">식단 기록</a>
+        <a href="body.html">신체 프로필</a>
+        <a href="workout.html">운동 기록</a>
+        <a href="dashboard.html">대시보드</a>
+        <a class="active" href="calendar.html">캘린더</a>
+        <a href="login.html">로그인</a>
+      </nav>
+      <div id="accountStatus" class="account-status"></div>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-title">
+        <p class="eyebrow">캘린더</p>
+        <h1>날짜를 선택해 저장된 식단, 신체 프로필, 운동 기록을 한 번에 확인합니다.</h1>
+        <p id="calendarDateNote" class="date-note"></p>
+      </section>
+
+      <section class="calendar-layout">
+        <article class="panel">
+          <div class="calendar-header">
+            <button id="prevMonth" class="button secondary" type="button">이전 달</button>
+            <h2 id="calendarTitle">2026년 6월</h2>
+            <button id="nextMonth" class="button secondary" type="button">다음 달</button>
+          </div>
+          <div class="calendar-weekdays" aria-hidden="true">
+            <span>일</span>
+            <span>월</span>
+            <span>화</span>
+            <span>수</span>
+            <span>목</span>
+            <span>금</span>
+            <span>토</span>
+          </div>
+          <div id="calendarGrid" class="calendar-grid"></div>
+        </article>
+
+        <article class="panel selected-day-panel">
+          <p class="eyebrow">선택한 날짜</p>
+          <h2 id="selectedDateTitle">기록 요약</h2>
+          <div class="summary-grid two">
+            <div class="metric-card"><span>섭취 칼로리</span><strong id="selectedCalories">0</strong><small>kcal</small></div>
+            <div class="metric-card"><span>목표 칼로리</span><strong id="selectedTarget">0</strong><small>kcal</small></div>
+            <div class="metric-card"><span>단백질</span><strong id="selectedProtein">0</strong><small>g</small></div>
+            <div class="metric-card"><span>운동 볼륨</span><strong id="selectedWorkout">0</strong><small>kg</small></div>
+          </div>
+          <p id="selectedBalance" class="feedback large"></p>
+        </article>
+      </section>
+
+      <section class="record-detail-grid">
+        <article class="panel">
+          <h2>신체 프로필</h2>
+          <div id="selectedProfile" class="detail-list"></div>
+        </article>
+        <article class="panel">
+          <h2>식단 기록</h2>
+          <div id="selectedMeals" class="detail-list"></div>
+        </article>
+        <article class="panel">
+          <h2>운동 기록</h2>
+          <div id="selectedWorkouts" class="detail-list"></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

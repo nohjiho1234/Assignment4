@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CampusFit | 대학생 식단 운동 트래커</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="CampusFit 홈">
+        <span class="brand-mark">CF</span>
+        <span>CampusFit</span>
+      </a>
+      <nav class="top-nav" aria-label="주요 내비게이션">
+        <a class="active" href="index.html">홈</a>
+        <a href="diet.html">식단 기록</a>
+        <a href="body.html">신체 프로필</a>
+        <a href="workout.html">운동 기록</a>
+        <a href="dashboard.html">대시보드</a>
+        <a href="calendar.html">캘린더</a>
+        <a href="login.html">로그인</a>
+      </nav>
+      <div id="accountStatus" class="account-status"></div>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <div class="hero-copy">
+          <p class="eyebrow">웨이트 트레이닝 학생을 위한 식단 및 운동 관리</p>
+          <h1>CampusFit</h1>
+          <p class="hero-text">
+            학교 식당 메뉴를 빠르게 추가하고, 칼로리와 주요 영양소를 계산하며,
+            목표 칼로리와 운동 볼륨 변화를 한 곳에서 확인하세요.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="diet.html">식단 기록 시작</a>
+            <a class="button secondary" href="workout.html">운동 기록하기</a>
+            <a class="button secondary" href="login.html">로그인 / 가입</a>
+          </div>
+        </div>
+        <div class="phone-preview" aria-label="CampusFit 대시보드 미리보기">
+          <div class="preview-bar"></div>
+          <div class="preview-card highlight">
+            <span>오늘</span>
+            <strong id="homeCalories">0 kcal</strong>
+            <small>기록한 섭취량</small>
+          </div>
+          <div class="preview-grid">
+            <div><strong id="homeProtein">0g</strong><span>단백질</span></div>
+            <div><strong id="homeWorkout">0kg</strong><span>운동 볼륨</span></div>
+          </div>
+          <div class="mini-chart">
+            <span style="height: 42%"></span>
+            <span style="height: 74%"></span>
+            <span style="height: 58%"></span>
+            <span style="height: 88%"></span>
+            <span style="height: 64%"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band">
+        <div class="section-heading">
+          <p class="eyebrow">핵심 흐름</p>
+          <h2>식단, 신체 목표, 운동 볼륨을 한 번에 관리합니다.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="icon-pill">01</div>
+            <h3>학교 식당 메뉴 빠른 추가</h3>
+            <p>준비된 캠퍼스 식단을 선택하고 실제 섭취량에 맞게 serving을 조절합니다.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon-pill">02</div>
+            <h3>칼로리 균형 확인</h3>
+            <p>신체 정보와 목표를 바탕으로 하루 목표 칼로리를 계산하고 초과/부족 상태를 확인합니다.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon-pill">03</div>
+            <h3>운동 볼륨 비교</h3>
+            <p>무게, 반복 횟수, 세트 수를 기록해 볼륨을 계산하고 이전 기록과 비교합니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split-section">
+        <div>
+          <p class="eyebrow">빠른 입력 중심</p>
+          <h2>점심 식사 직후와 운동 직후에 바로 쓰기 좋습니다.</h2>
+          <p>
+            CampusFit은 음식을 추가하고, 목표를 설정하고, 운동을 기록한 뒤
+            하나의 대시보드에서 하루 상태를 확인하는 흐름으로 구성되어 있습니다.
+          </p>
+        </div>
+        <div class="stats-strip">
+          <div><strong>5</strong><span>페이지</span></div>
+          <div><strong>4</strong><span>영양 지표</span></div>
+          <div><strong>1</strong><span>일일 대시보드</span></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

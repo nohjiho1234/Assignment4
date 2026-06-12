@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>대시보드 | CampusFit</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span class="brand-mark">CF</span><span>CampusFit</span></a>
+      <nav class="top-nav" aria-label="주요 내비게이션">
+        <a href="index.html">홈</a>
+        <a href="diet.html">식단 기록</a>
+        <a href="body.html">신체 프로필</a>
+        <a href="workout.html">운동 기록</a>
+        <a class="active" href="dashboard.html">대시보드</a>
+        <a href="calendar.html">캘린더</a>
+        <a href="login.html">로그인</a>
+      </nav>
+      <div id="accountStatus" class="account-status"></div>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-title">
+        <p class="eyebrow">대시보드</p>
+        <h1>오늘의 영양과 운동 상태를 한눈에 확인합니다.</h1>
+        <p id="dashboardDateLabel" class="date-note"></p>
+      </section>
+
+      <section class="summary-grid">
+        <div class="metric-card"><span>섭취 칼로리</span><strong id="dashCalories">0</strong><small>kcal</small></div>
+        <div class="metric-card"><span>목표 칼로리</span><strong id="dashTarget">0</strong><small>kcal</small></div>
+        <div class="metric-card"><span>단백질</span><strong id="dashProtein">0</strong><small>g</small></div>
+        <div class="metric-card"><span>운동 볼륨</span><strong id="dashWorkout">0</strong><small>kg</small></div>
+      </section>
+
+      <section class="two-column">
+        <article class="panel result-panel">
+          <h2>칼로리 균형</h2>
+          <p id="balanceFeedback" class="feedback large">아직 목표 칼로리가 계산되지 않았습니다.</p>
+          <div class="progress-track"><span id="calorieProgress"></span></div>
+        </article>
+        <article class="panel result-panel">
+          <h2>단백질 진행률</h2>
+          <p id="proteinFeedback" class="feedback">식사를 추가하면 단백질 섭취량을 추적할 수 있습니다.</p>
+          <div class="progress-track protein"><span id="proteinProgress"></span></div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2>운동 성장 기록</h2>
+        <div id="growthList" class="growth-list"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
