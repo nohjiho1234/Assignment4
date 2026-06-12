@@ -48,7 +48,71 @@ const foodDatabase = [
   { name: "닭가슴살 샐러드", aliases: ["치킨 샐러드"], servingLabel: "1그릇", calories: 330, protein: 32, carbs: 18, fat: 14 },
   { name: "불고기 덮밥", aliases: ["불고기"], servingLabel: "1그릇", calories: 720, protein: 32, carbs: 93, fat: 24 },
   { name: "제육덮밥", aliases: ["제육"], servingLabel: "1그릇", calories: 760, protein: 34, carbs: 88, fat: 30 },
-  { name: "치킨텐더", aliases: ["치킨 텐더"], servingLabel: "100g", calories: 290, protein: 18, carbs: 18, fat: 16 }
+  { name: "치킨텐더", aliases: ["치킨 텐더"], servingLabel: "100g", calories: 290, protein: 18, carbs: 18, fat: 16 },
+  { name: "닭가슴살 볶음밥", aliases: ["닭볶음밥", "치킨 볶음밥"], servingLabel: "1인분", calories: 520, protein: 32, carbs: 68, fat: 12 },
+  { name: "김치볶음밥", aliases: ["김볶밥"], servingLabel: "1인분", calories: 610, protein: 16, carbs: 86, fat: 22 },
+  { name: "새우볶음밥", aliases: ["shrimp fried rice"], servingLabel: "1인분", calories: 620, protein: 23, carbs: 82, fat: 20 },
+  { name: "참치마요덮밥", aliases: ["참치마요"], servingLabel: "1그릇", calories: 760, protein: 25, carbs: 92, fat: 32 },
+  { name: "카레라이스", aliases: ["카레", "curry rice"], servingLabel: "1그릇", calories: 690, protein: 18, carbs: 105, fat: 20 },
+  { name: "오므라이스", aliases: ["omelet rice"], servingLabel: "1그릇", calories: 780, protein: 24, carbs: 96, fat: 32 },
+  { name: "돈까스", aliases: ["돈가스", "pork cutlet"], servingLabel: "1인분", calories: 850, protein: 34, carbs: 82, fat: 42 },
+  { name: "치즈돈까스", aliases: ["치즈돈가스"], servingLabel: "1인분", calories: 920, protein: 38, carbs: 84, fat: 48 },
+  { name: "냉모밀", aliases: ["메밀국수", "모밀"], servingLabel: "1그릇", calories: 420, protein: 14, carbs: 82, fat: 4 },
+  { name: "우동", aliases: ["udon"], servingLabel: "1그릇", calories: 480, protein: 14, carbs: 88, fat: 8 },
+  { name: "잔치국수", aliases: ["국수"], servingLabel: "1그릇", calories: 520, protein: 16, carbs: 96, fat: 8 },
+  { name: "짜장면", aliases: ["jajangmyeon"], servingLabel: "1그릇", calories: 800, protein: 25, carbs: 122, fat: 22 },
+  { name: "짬뽕", aliases: ["jjamppong"], servingLabel: "1그릇", calories: 690, protein: 30, carbs: 92, fat: 20 },
+  { name: "탕수육", aliases: ["sweet sour pork"], servingLabel: "1인분", calories: 780, protein: 32, carbs: 78, fat: 36 },
+  { name: "떡볶이", aliases: ["tteokbokki"], servingLabel: "1인분", calories: 520, protein: 10, carbs: 96, fat: 10 },
+  { name: "튀김", aliases: ["모듬튀김"], servingLabel: "1인분", calories: 430, protein: 9, carbs: 42, fat: 25 },
+  { name: "왕교자만두", aliases: ["만두", "교자만두"], servingLabel: "5개", calories: 360, protein: 15, carbs: 42, fat: 15 },
+  { name: "버팔로윙", aliases: ["buffalo wing", "치킨윙"], servingLabel: "5조각", calories: 430, protein: 24, carbs: 12, fat: 32 },
+  { name: "삼겹살", aliases: ["pork belly"], servingLabel: "100g", calories: 518, protein: 17, carbs: 0, fat: 49 },
+  { name: "목살구이", aliases: ["목살"], servingLabel: "100g", calories: 265, protein: 24, carbs: 0, fat: 18 },
+  { name: "갈비탕", aliases: ["galbi soup"], servingLabel: "1그릇", calories: 650, protein: 38, carbs: 62, fat: 26 },
+  { name: "설렁탕", aliases: ["seolleongtang"], servingLabel: "1그릇", calories: 520, protein: 32, carbs: 64, fat: 14 },
+  { name: "순대국밥", aliases: ["순대국"], servingLabel: "1그릇", calories: 720, protein: 28, carbs: 82, fat: 30 },
+  { name: "육개장", aliases: ["spicy beef soup"], servingLabel: "1그릇", calories: 540, protein: 32, carbs: 48, fat: 24 },
+  { name: "부대찌개", aliases: ["budae jjigae"], servingLabel: "1인분", calories: 760, protein: 32, carbs: 62, fat: 42 },
+  { name: "순두부찌개", aliases: ["순두부"], servingLabel: "1인분", calories: 330, protein: 22, carbs: 16, fat: 20 },
+  { name: "미역국", aliases: ["seaweed soup"], servingLabel: "1그릇", calories: 120, protein: 8, carbs: 7, fat: 6 },
+  { name: "콩나물국", aliases: ["콩나물"], servingLabel: "1그릇", calories: 80, protein: 5, carbs: 9, fat: 2 },
+  { name: "계란찜", aliases: ["달걀찜"], servingLabel: "1인분", calories: 160, protein: 13, carbs: 4, fat: 10 },
+  { name: "김치", aliases: ["배추김치"], servingLabel: "50g", calories: 15, protein: 1, carbs: 3, fat: 0.2 },
+  { name: "멸치볶음", aliases: ["멸치"], servingLabel: "30g", calories: 100, protein: 12, carbs: 6, fat: 3 },
+  { name: "시금치나물", aliases: ["시금치"], servingLabel: "50g", calories: 35, protein: 2.5, carbs: 4, fat: 1 },
+  { name: "콩자반", aliases: ["검은콩"], servingLabel: "50g", calories: 140, protein: 9, carbs: 18, fat: 4 },
+  { name: "감자조림", aliases: ["감자 반찬"], servingLabel: "80g", calories: 120, protein: 2, carbs: 24, fat: 2 },
+  { name: "샌드위치", aliases: ["sandwich"], servingLabel: "1개", calories: 420, protein: 20, carbs: 48, fat: 16 },
+  { name: "햄버거", aliases: ["burger"], servingLabel: "1개", calories: 560, protein: 28, carbs: 48, fat: 28 },
+  { name: "치킨버거", aliases: ["chicken burger"], servingLabel: "1개", calories: 610, protein: 31, carbs: 52, fat: 30 },
+  { name: "감자튀김", aliases: ["프렌치프라이", "fries"], servingLabel: "중간", calories: 365, protein: 4, carbs: 48, fat: 17 },
+  { name: "피자", aliases: ["pizza"], servingLabel: "2조각", calories: 560, protein: 24, carbs: 66, fat: 22 },
+  { name: "치킨", aliases: ["후라이드치킨", "fried chicken"], servingLabel: "3조각", calories: 690, protein: 45, carbs: 28, fat: 44 },
+  { name: "닭강정", aliases: ["강정"], servingLabel: "1인분", calories: 620, protein: 32, carbs: 62, fat: 26 },
+  { name: "샤브샤브", aliases: ["shabu"], servingLabel: "1인분", calories: 520, protein: 38, carbs: 42, fat: 20 },
+  { name: "월남쌈", aliases: ["spring roll"], servingLabel: "1인분", calories: 430, protein: 24, carbs: 58, fat: 10 },
+  { name: "닭갈비", aliases: ["dakgalbi"], servingLabel: "1인분", calories: 720, protein: 42, carbs: 58, fat: 34 },
+  { name: "쭈꾸미볶음", aliases: ["주꾸미볶음"], servingLabel: "1인분", calories: 480, protein: 35, carbs: 42, fat: 18 },
+  { name: "낙지볶음", aliases: ["낙지"], servingLabel: "1인분", calories: 500, protein: 34, carbs: 50, fat: 16 },
+  { name: "고등어구이", aliases: ["고등어"], servingLabel: "1토막", calories: 290, protein: 24, carbs: 0, fat: 21 },
+  { name: "삼치구이", aliases: ["삼치"], servingLabel: "1토막", calories: 230, protein: 25, carbs: 0, fat: 14 },
+  { name: "새우", aliases: ["shrimp"], servingLabel: "100g", calories: 99, protein: 24, carbs: 0.2, fat: 0.3 },
+  { name: "오징어볶음", aliases: ["오징어"], servingLabel: "1인분", calories: 390, protein: 30, carbs: 42, fat: 10 },
+  { name: "파스타", aliases: ["토마토 파스타", "pasta"], servingLabel: "1접시", calories: 680, protein: 22, carbs: 98, fat: 20 },
+  { name: "크림파스타", aliases: ["cream pasta"], servingLabel: "1접시", calories: 880, protein: 26, carbs: 86, fat: 46 },
+  { name: "리조또", aliases: ["risotto"], servingLabel: "1접시", calories: 720, protein: 24, carbs: 88, fat: 28 },
+  { name: "시리얼", aliases: ["cereal"], servingLabel: "40g", calories: 150, protein: 3, carbs: 34, fat: 1 },
+  { name: "식빵", aliases: ["bread", "토스트"], servingLabel: "2장", calories: 200, protein: 7, carbs: 38, fat: 3 },
+  { name: "베이글", aliases: ["bagel"], servingLabel: "1개", calories: 280, protein: 10, carbs: 56, fat: 2 },
+  { name: "아보카도", aliases: ["avocado"], servingLabel: "1/2개", calories: 160, protein: 2, carbs: 8.5, fat: 14.7 },
+  { name: "브로콜리", aliases: ["broccoli"], servingLabel: "100g", calories: 35, protein: 2.4, carbs: 7, fat: 0.4 },
+  { name: "방울토마토", aliases: ["토마토", "tomato"], servingLabel: "100g", calories: 18, protein: 0.9, carbs: 3.9, fat: 0.2 },
+  { name: "블루베리", aliases: ["blueberry"], servingLabel: "100g", calories: 57, protein: 0.7, carbs: 14, fat: 0.3 },
+  { name: "딸기", aliases: ["strawberry"], servingLabel: "100g", calories: 32, protein: 0.7, carbs: 7.7, fat: 0.3 },
+  { name: "단백질바", aliases: ["프로틴바", "protein bar"], servingLabel: "1개", calories: 210, protein: 20, carbs: 22, fat: 7 },
+  { name: "아이스 아메리카노", aliases: ["아메리카노", "coffee"], servingLabel: "1잔", calories: 10, protein: 0, carbs: 2, fat: 0 },
+  { name: "카페라떼", aliases: ["라떼", "latte"], servingLabel: "1잔", calories: 180, protein: 9, carbs: 18, fat: 8 }
 ];
 
 function readStore(key, fallback) {
@@ -447,8 +511,14 @@ function initDietPage() {
     }
 
     if (!matches.length) {
-      foodSuggestions.innerHTML = "";
-      foodAutoFillMessage.textContent = "내장 음식 데이터에 없는 항목입니다. 영양소를 직접 입력할 수 있습니다.";
+      foodSuggestions.innerHTML = `
+        <div class="manual-entry-help">
+          <strong>직접 입력 모드</strong>
+          <span>일치하는 음식이 없어서 자동 입력하지 않았습니다. 음식명은 그대로 두고 칼로리와 영양소를 직접 입력하세요.</span>
+          <small>검색 예시: 닭가슴살, 현미밥, 김치찌개, 돈까스, 떡볶이, 프로틴 쉐이크</small>
+        </div>
+      `;
+      foodAutoFillMessage.textContent = "자동 매칭 결과가 없습니다.";
       foodAutoFillMessage.className = "form-message error";
       return;
     }
@@ -461,6 +531,10 @@ function initDietPage() {
         </button>
       `)
       .join("");
+    if (!exact) {
+      foodAutoFillMessage.textContent = "가장 가까운 후보를 선택하면 영양소가 자동 입력됩니다.";
+      foodAutoFillMessage.className = "form-message";
+    }
   };
 
   const render = () => {

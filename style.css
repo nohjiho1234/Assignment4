@@ -538,6 +538,26 @@ select:focus {
   background: var(--surface-strong);
 }
 
+.manual-entry-help {
+  display: grid;
+  gap: 7px;
+  padding: 14px;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  background: #fffdf7;
+}
+
+.manual-entry-help strong {
+  color: var(--text);
+}
+
+.manual-entry-help span,
+.manual-entry-help small {
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.45;
+}
+
 .food-suggestion strong,
 .food-suggestion span {
   display: block;
